@@ -22,7 +22,7 @@ pipeline{
 			}
 		}
 		
-		stage('Docker push){
+		stage('Docker push'){
 			steps{
 				sh 'docker push shubhamdige24/python-devops-app:latest'
 			}
