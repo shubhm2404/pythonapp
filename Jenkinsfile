@@ -1,38 +1,26 @@
-pipeline{
-	
+pipeline {
 	agent any
-
-	stages{
-
-		stage('Test'){
-			steps{
-				sh 'pip install -r requirements.txt'
-				sh 'pytest'
+	stages {
+		stage('Checkout') {
+			steps {
+				checkout scm
 			}
 		}
-		
-		stage('Docker Build'){
-			steps{
-				sh 'sudo docker build -t shubhamdige24/python-devops-app:latest .'
+		stage('Test') {
+			steps {
+			sh 'pip install -r requirements.txt'
+			sh 'pytest'
 			}
 		}
-		
-		stage('Docker push'){
-			steps{
-				sh 'sudo docker push shubhamdige24/python-devops-app:latest'
+		stage('Docker Build') {
+			steps {
+			sh 'docker build -t yourusername/python-devops-app:latest .'
 			}
-
 		}
-
-
+		stage('Docker Push') {
+			steps {
+			sh 'docker push yourusername/python-devops-app:latest'
+			}
+		}
 	}
-
 }
-
-
-
-
-
-
-
-
