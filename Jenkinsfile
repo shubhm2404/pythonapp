@@ -14,8 +14,8 @@ pipeline {
                         }
                         stage('Test') {
                                 steps {
-					sh 'apt install python3 python3-pip python3-venv python3-dev build-essential -y'
-                                        sh 'apt install python3 -y'
+					#sh 'apt install python3 python3-pip python3-venv python3-dev build-essential -y'
+                                        #sXxh 'apt install python3 -y'
                                         sh 'pip install -r requirements.txt'
                                 }
                         }
