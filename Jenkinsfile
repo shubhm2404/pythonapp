@@ -37,6 +37,25 @@ pipeline {
                                        sh 'docker build -t shubhamdige24/python-devops-app:latest .'
                                         }
 			}
+
+			stage('Docker Login') {
+			        steps {
+				       withCredentials([
+				       usernamePassword(
+				       credentialsId: 'Docker login',
+				       usernameVariable: 'DOCKER_USERNAME',
+				       passwordVariable: 'DOCKER_PASSWORD'
+				)
+				]) {
+					sh '''
+					echo "$DOCKER_PASSWORD" | docker login
+					--username "$DOCKER_USERNAME" \
+					--password-stdin
+					'''
+					}
+				}
+			}
+
 			stage('Docker Push') {
                                 steps {
                                         sh 'docker push shubhamdige24/python-devops-app:latest'
