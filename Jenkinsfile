@@ -32,11 +32,6 @@ pipeline {
 				}
 			}
 
-			stage('Test') {
-                                steps {
-                                        sh 'pip install -r requirements.txt'
-                                }
-                        }
                         stage('Docker Build') {
                                 steps {
                                        sh 'docker build -t shubhamdige24/python-devops-app:latest .'
