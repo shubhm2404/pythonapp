@@ -1,7 +1,13 @@
 pipeline {
         agent any
                 stages {
-                        stage('Checkout') {
+                        stage('CHECK') {
+                                steps {
+                                        sh 'mkdir -p devops'
+                                }
+                        }
+
+			stage('Checkout') {
                                 steps {
                                         checkout scm
                                 }
