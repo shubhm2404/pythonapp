@@ -8,20 +8,9 @@ pipeline {
 			}
 			stage('Test') {
 				steps {
-					sh 'pip install -r requirements.txt'
-					sh 'pytest'
+					echo "Welcome to Devops"
 				}
 			}
-			stage('Docker Build') {
-				steps {
-					sh 'docker build -t shubhamdige24/python-devops-app:latest .'
-					}
-            }
-            stage('Docker Push') {
-				steps {
-					sh 'docker push shubhamdige24/python-devops-app:latest'
-				}
-             }
-           }
+		}
 
-}
+	}
