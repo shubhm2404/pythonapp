@@ -15,6 +15,7 @@ pipeline {
                         stage('Test') {
                                 steps {
                                         sh 'exit'
+					sh 'sudo su root'
 					sh 'sudo apt update'
                                         sh 'sudo apt install python3 python3-pip python3-venv python3-dev build-essential -y'
                                         sh 'sudo apt install python3 -y'
