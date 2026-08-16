@@ -37,4 +37,9 @@ echo "========================================="
 echo "Starting Jenkins..."
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+
+echo "========================================="
+echo "     Jenkins Installation Status"
+echo "========================================="
+
 sudo systemctl status jenkins
