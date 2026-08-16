@@ -18,6 +18,18 @@ pipeline{
                         }
 		     }
 
+          stage('Docker Build'){
+                        steps{
+                                sh 'sudo docker build -t shubhamdige24/python-devops-app:latest .'
+                        }
+                }
+
+                stage('Docker push'){
+                        steps{
+                                sh 'sudo docker push shubhamdige24/python-devops-app:latest'
+                        }
+
+                }
 
 	
 
