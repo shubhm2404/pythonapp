@@ -28,7 +28,7 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
 
 echo "step [5/6] Updating Packages and installing jenkins"
 sudo apt update
-sudo apt install jenkins
+sudo apt install jenkins -y
 
 echo "========================================="
 echo "     Jenkins Installation Complete"
@@ -37,3 +37,4 @@ echo "========================================="
 echo "Starting Jenkins..."
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+sudo systemctl status jenkins
