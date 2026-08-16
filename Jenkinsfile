@@ -14,12 +14,14 @@ pipeline {
                         }
                         stage('Test') {
                                 steps {
-                                        sh 'sudo apt update'
+                                        sh 'exit'
+					sh 'sudo apt update'
                                         sh 'sudo apt install python3 python3-pip python3-venv python3-dev build-essential -y'
                                         sh 'sudo apt install python3 -y'
                                         sh 'pip install -r requirements.txt'
                                         sh 'python3 -m pytest'
                                         sh 'python3 -m Flask'
+					sh 'sudo su jenkins'
                                 }
                         }
                         stage('Docker Build') {
